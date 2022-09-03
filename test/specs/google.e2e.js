@@ -18,5 +18,10 @@ describe("Assessment", function () {
     const title = await browser.getTitle();
 
     await expect(title).toEqual("Google");
+
+    // Dismiss cookies
+
+    const cookieBtn = $("div=Reject all");
+    await cookieBtn.click();
   });
 });
