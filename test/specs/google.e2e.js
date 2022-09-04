@@ -54,12 +54,18 @@ describe("Assessment", function () {
 
   //  5. Search for BDD with Cucumber
 
-  it("searches Udemy search bar for BDD with cucumber and clicks on highest rating course", async function () {
-    await UdemyPage.open();
-    await UdemyPage.searchInput.setValue("BDD with cucumber");
-    await UdemyPage.searchInput.keys("Enter");
+  it("searches Udemy search bar for BDD with cucumber", async function () {
+    const searchInput = await $("input[name=q]");
+    const udemySearch = "BDD with cucumber";
+    await searchInput.click();
 
-    await expect(browser).toHaveTitleContaining("BDD with cucumber");
+    await browser.keys(udemySearch);
+    await browser.keys("Enter");
+
+    const heading = await $("h1");
+
+    await expect(heading).toContain("BDD with cucumber");
+  });
     // 6.Click on the course with highest rating from the list of search results
 
     const dropDown = await $("");
