@@ -8,7 +8,6 @@
 // Task: Automate the above scenario given using JS and any tool (WebdriverIO or Selenium). The Project should be shared as a GitHub project. Each automation step should have assertions''
 
 import GooglePage from "../pageobjects/google.page";
-import UdemyPage from "../pageobjects/udemy.page";
 
 describe("Assessment", function () {
   it("Opens Google", async function () {
@@ -66,13 +65,14 @@ describe("Assessment", function () {
 
     await expect(heading).toContain("BDD with cucumber");
   });
-    // 6.Click on the course with highest rating from the list of search results
+  // 6.Click on the course with highest rating from the list of search results
 
-    const dropDown = await $("");
+  it("finds highest rated course and clicks on it", async function () {
+    const dropDown = await $("select[name=sort]");
     await dropDown.click();
     await dropDown.selectByVisibleText("Highest Rated");
 
-    const firstLink = await "=bdd with cucumber";
+    const firstLink = await $("h3");
     await firstLink.click();
 
     const title = await browser.getTitle();
