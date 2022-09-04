@@ -30,9 +30,12 @@ describe("Assessment", function () {
   it("searches for 'Test Automation Learning' in search bar", async function () {
     const searchPhrase = "Test Automation Learning";
 
-    await GooglePage.open();
-    await GooglePage.search(searchPhrase);
-    await GooglePage.searchInput.keys("Enter");
+    const searchInput = $("input");
+    await searchInput.click();
+    await browser.keys(searchPhrase);
+    await browser.keys("Enter");
+
+    await browser.pause(1000);
 
     const title = await browser.getTitle();
     await expect(title).toHaveTitleContaining("Test Automation Learning");
