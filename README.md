@@ -18,6 +18,7 @@ Automate the above scenario given using JS and any tool (WebdriverIO or Selenium
 
 - Created pageobjects page for Google to abstract code away and make the pages file more declarative
 - Created google end to end page for testing
+- Attempted to create pageobjects page for Udemy, however wasn't able to make end to end test page and to incorporate UdemyPage into test. This is included in a separate branch called 'udemyPage'.
 - Wrote tests to fulfill the scenario for the given task
 
 <h3>Limitations</h3>
