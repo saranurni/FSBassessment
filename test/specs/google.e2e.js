@@ -8,6 +8,7 @@
 // Task: Automate the above scenario given using JS and any tool (WebdriverIO or Selenium). The Project should be shared as a GitHub project. Each automation step should have assertions''
 
 import GooglePage from "../pageobjects/google.page";
+import UdemyPage from "../pageobjects/udemy.page";
 
 describe("Assessment", function () {
   it("Opens Google", async function () {
@@ -24,6 +25,7 @@ describe("Assessment", function () {
     const cookieBtn = $("div=Reject all");
     await cookieBtn.click();
   });
+
   // 2. Search for the keyword 'Test Automation Learning'
   it("searches for 'Test Automation Learning' in search bar", async function () {
     const searchPhrase = "Test Automation Learning";
@@ -45,7 +47,7 @@ describe("Assessment", function () {
     await GooglePage.clickResult(desiredResult);
     //  4. Verify if the Udemy site has opened
     const title = await browser.getTitle();
-    await expect(title).toHaveTitleContaining("Udemy");
+    await expect(title).toHaveTextContaining("Udemy");
   });
 
   //  5. Search for BDD with Cucumber
