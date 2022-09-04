@@ -14,7 +14,7 @@ Automate the above scenario given using JS and any tool (WebdriverIO or Selenium
 
 <br>
 
-<h2>Procedure<h2>
+<h2>Procedure</h2>
 
 - Created pageobjects page for Google to abstract code away and make the pages file more declarative
 - Created google end to end page for testing
@@ -24,4 +24,4 @@ Automate the above scenario given using JS and any tool (WebdriverIO or Selenium
 
 - After passing 3 tests, following tests failed as we run into captcha problems.
 
-### webdriverio-mocha-linting
+#### webdriverio-mocha-linting
