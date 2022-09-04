@@ -38,7 +38,7 @@ describe("Assessment", function () {
     await browser.pause(1000);
 
     const title = await browser.getTitle();
-    await expect(title).toHaveTitleContaining("Test Automation Learning");
+    await expect(title).toContain("Test Automation Learning");
   });
 
   //  3. Select the link with Udemy course
