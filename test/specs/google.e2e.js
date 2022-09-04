@@ -43,14 +43,13 @@ describe("Assessment", function () {
 
   //  3. Select the link with Udemy course
   it("selects the Udemy course link", async function () {
-    const desiredResult = "Udemy";
+    const desiredResult = $("h3*=Udemy");
 
-    await GooglePage.open();
+    await desiredResult.click();
 
-    await GooglePage.clickResult(desiredResult);
     //  4. Verify if the Udemy site has opened
     const title = await browser.getTitle();
-    await expect(title).toHaveTextContaining("Udemy");
+    await expect(title).toContain("Udemy");
   });
 
   //  5. Search for BDD with Cucumber
