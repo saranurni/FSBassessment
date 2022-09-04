@@ -13,7 +13,7 @@ describe("Assessment", function () {
   it("Opens Google", async function () {
     //  1. Go to google site and check it is Google
 
-    await browser.url("http://www.google.com");
+    await GooglePage.open();
 
     const title = await browser.getTitle();
 
@@ -31,8 +31,8 @@ describe("Assessment", function () {
 
     const searchInput = $("input");
     await searchInput.click();
-    await browser.keys(searchPhrase);
-    await browser.keys("Enter");
+    await GooglePage.keys(searchPhrase);
+    await GooglePage.keys("Enter");
 
     await browser.pause(1000);
 
@@ -58,8 +58,8 @@ describe("Assessment", function () {
     const udemySearch = "BDD with cucumber";
     await searchInput.click();
 
-    await browser.keys(udemySearch);
-    await browser.keys("Enter");
+    await GooglePage.keys(udemySearch);
+    await GooglePage.keys("Enter");
 
     const heading = await $("h1");
 
