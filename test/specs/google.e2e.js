@@ -3,11 +3,9 @@ import GooglePage from "../pageobjects/google.page";
 describe("Assessment", function () {
   it("Opens Google", async function () {
     //  1. Go to google site and check it is Google
-
     await GooglePage.open();
 
     const title = await browser.getTitle();
-
     await expect(title).toEqual("Google");
 
     // Dismiss cookies
